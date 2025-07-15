@@ -1,5 +1,10 @@
 #include <iostream>
 using namespace std;
+void swap(int* a, int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 int main() {
     ios::sync_with_stdio(false);
@@ -8,14 +13,8 @@ int main() {
     int n;cin>>n;
     int arr[n];
     int* ptr = arr;
-    int max = INT16_MIN , min = INT16_MAX;
     for (int i = 0; i < n; i++)cin>>*(ptr+i);
-    for (int i = 0; i < n; i++)
-    {
-        if (*(ptr+i)>max)max = *(ptr+i);
-        if(*(ptr+i)<min)min = *(ptr+i);
-    }
-    cout<<max<<endl;
-    cout<<min;
+    swap((ptr),(ptr+n-1));
 
+    for (int i = 0; i < n; i++)cout<<*(ptr+i)<<" ";
 }
