@@ -1,21 +1,19 @@
 #include <iostream>
 using namespace std;
+bool result(int a){
+   if(a>39){
+    return true;
+   }
+   else return false;
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    
+    cout<<boolalpha;
+    cout<<result(5)<<endl;
+    cout<<result(60)<<endl;
+    cout<<result(39)<<endl;
 
-    int n,m;cin>>n>>m;
-    int arr[n][m];
-    for (int  i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)cin>>arr[i][j];
-    }
-    for (int  i = 0; i < n; i++)
-    {
-        for (int j = m-1; j >= 0; j--){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
 }
