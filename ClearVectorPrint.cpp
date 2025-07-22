@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <climits>
 using namespace std;
 
 int main() {
@@ -13,11 +11,8 @@ int main() {
         int x;cin>>x;
         v.push_back(x);
     }
-    int frq ;cin>>frq;
-    int count=0;
-    for (int i = n-1; i >= 0; i--)
-    {
-        if(frq==v[i])count++;
-    }
-    cout<<count;
+    cout<<"Size before clear: "<<v.size()<<endl;
+    v.clear();
+    cout<<"Size  clear: "<<v.size()<<endl;
+
 }
