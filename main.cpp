@@ -1,23 +1,24 @@
-#include <iostream>
-#include <vector>
-#include <climits>
+#include <iostream>//1829B
 using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n;cin>>n;
-    vector<int> v;
-    for (int i = 0; i < n; i++){
-        int x;cin>>x;
-        v.push_back(x);
-    }
-    int frq ;cin>>frq;
-    int count=0;
-    for (int i = n-1; i >= 0; i--)
+    int t;cin>>t;
+    while (t--)
     {
-        if(frq==v[i])count++;
+        int n,current = 0, best =0;cin>>n;
+        int arr[n];
+        for (int i = 0; i < n; i++)cin>>arr[i];
+        for (int i = 0; i < n; i++)
+        {
+            if(arr[i]== 0){
+                current++;
+                best = max(current,best);
+            }
+            else current = 0;
+        }
+        cout<<best<<endl; 
     }
-    cout<<count;
 }
